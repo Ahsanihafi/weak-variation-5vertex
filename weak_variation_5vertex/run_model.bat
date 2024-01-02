@@ -1,0 +1,10 @@
+start /W " "  "%SFDIR%autofish" model_0
+start /W " "  "%SFDIR%autofish" model_1
+start /W " "  "%SFDIR%autofish" model_2
+start /W " "  "%SFDIR%autofish" model_3
+start /W " "  "%SFDIR%autofish" model_4
+start /W " "  "%SFDIR%autofish" model_5
+start /W " "  "%SFDIR%autofish" model_6
+start /W " "  "%SFDIR%autofish" model_7
+start /W " "  "%SFDIR%autofish" model_8
+start /W " "  "%SFDIR%autofish" model_9
