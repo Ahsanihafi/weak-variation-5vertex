@@ -20,41 +20,23 @@ void C_Section::ifTable(string nama)
 }
 
 //dari interpolasi linear ini, harapannya kita bisa assign nilai pada vektor dengan step yang seragam (di bawah ini stepnya nggak seragam, makanya nggak bisa pakai EtoL)
-double C_Section::interpolate(double E)
-{
+double C_Section::interpolate(double E){
     size_t Ne = crosstable.size();
-    if (E<crosstable[0].energVal)
-    {
-        return 0;
-    }        
-    else if (E>crosstable[Ne-1].energVal)
-    {
-        return 0;
-    }
-    else
-    {
+    if (E<crosstable[0].energVal){
+        return 0;}        
+    else if (E>crosstable[Ne-1].energVal){
+        return 0;}
+    else{
         double sigmaE = 0;
-        //sementara scan semua, berhubung nggak banyak datanya, kayaknya nggak terlalu masalah
-        for (int i=0; i<Ne; i++)
-        {   
-            if( (E>=crosstable[i].energVal) && (E<=crosstable[i+1].energVal) )
-            {
+        for (int i=0; i<Ne; i++){   
+            if( (E>=crosstable[i].energVal) && (E<=crosstable[i+1].energVal) ){
                 double sigmae = ((crosstable[i+1].crossSection - crosstable[i].crossSection)*(E-crosstable[i].energVal)/(crosstable[i+1].energVal-crosstable[i].energVal)) + crosstable[i].crossSection;
-                sigmaE = sigmae;
-                break;
-            }
-            else
-            {
+                sigmaE = sigmae; break;}
+            else{
                 continue;
-                if (i==Ne-1)
-                {
-                    cout << "tidak terjadi break \n"; 
-                }
-            }
-        }
-        return sigmaE;
-    }
-}
+                if (i==Ne-1){
+                    cout << "tidak terjadi break \n"; }}}
+        return sigmaE;}}
 
 void C_Section::setVal()
 {
